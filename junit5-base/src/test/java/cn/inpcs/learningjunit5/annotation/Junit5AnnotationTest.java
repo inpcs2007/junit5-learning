@@ -3,6 +3,7 @@ package cn.inpcs.learningjunit5.annotation;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * JUnit 5 提供了一些常用的注解在编写测试用例的时候使用。
@@ -46,7 +47,8 @@ public class Junit5AnnotationTest {
      */
     @Test
     void testTag() {
-        assertEquals("Test Tag", "Test Tag");
+        String actual = "Test Tag";
+        assertEquals("Test Tag", actual);
     }
 
     /**
@@ -55,22 +57,24 @@ public class Junit5AnnotationTest {
     @Test
     @DisplayName("DisplayName Tag")
     void DisplayNameTest() {
-        assertEquals("DisplayName Tag", "DisplayName Tag");
+        String actual = "DisplayName Tag";
+        assertEquals("DisplayName Tag", actual);
     }
 
-    /**
-     * @Disabled 禁用测试类或方法
-     */
-    @Disabled
-    void disabledTest() {
-        assertEquals("This is Disabled Tag", "This is Disabled Tag");
-    }
+//    /**
+//     * @Disabled 禁用测试类或方法
+//     */
+//    @Disabled
+//    void disabledTest() {
+//        String actual = "This is Disabled Tag";
+//        assertEquals("This is Disabled Tag", actual);
+//    }
 
     /**
      * Fail test.
      */
     @Test
     void failTest() {
-//        fail("This should fail");
+        fail("This should fail");
     }
 }

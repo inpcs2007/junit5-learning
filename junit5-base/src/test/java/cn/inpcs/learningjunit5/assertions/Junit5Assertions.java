@@ -4,23 +4,29 @@ import com.google.common.collect.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.TimeUnit;
+
 import static java.time.Duration.ofMillis;
 import static org.junit.jupiter.api.Assertions.*;
 
+import static org.awaitility.Awaitility.*;
+
 /**
- * The type Junit 5 assertions.
+ * The type Junit 5 assertions.O
  *
  * @author inpcs
  * @version 1.0
  * @date 2020 -04-09 22:08:47
  */
 public class Junit5Assertions {
+
     /**
      * @assertEquals 判断两个对象或两个原始类型是否相等
      */
     @Test
     void AssertEqualsTag() {
-        assertEquals(1 + 1, 2);
+        int actual = 5;
+        assertEquals(5, actual);
     }
 
     /**
@@ -28,7 +34,8 @@ public class Junit5Assertions {
      */
     @Test
     void assertNotEqualsTag() {
-        assertNotEquals(1, 2);
+        int actual = 5;
+        assertNotEquals(1, actual);
     }
 
     /**
@@ -88,7 +95,8 @@ public class Junit5Assertions {
      */
     @Test
     void assertArrayEqualsTag() {
-        assertArrayEquals(new int[]{8, 9}, new int[]{8, 9});
+        int[] actual = {8, 9};
+        assertArrayEquals(new int[]{8, 9}, actual);
     }
 
     /**
@@ -98,9 +106,10 @@ public class Junit5Assertions {
      */
     @Test
     void assertAllTag() {
+        int actual = 2;
         assertAll("testAll",
-                () -> assertEquals(1 + 1, 2),
-                () -> assertNotEquals(1 + 1, 3));
+                () -> assertEquals(1 + 1, actual),
+                () -> assertNotEquals(1 + 2, actual));
     }
 
     /**
@@ -121,10 +130,12 @@ public class Junit5Assertions {
     @Test
     @DisplayName("throwable NullPointerException Object")
     void exceptionThrowsTag() {
+        Object object = null;
         Throwable exception = assertThrows(NullPointerException.class, () -> {
-            AssertThrowExceptionDemo.nullException();
+            object.toString();
         });
-        assertEquals("a NullPointerException msg", exception.getMessage());
+
+        assertEquals(null, exception.getMessage());
     }
 
     /**
@@ -135,10 +146,10 @@ public class Junit5Assertions {
     void assertDoesNotThrowTag() {
 
         //这是带返回参数的assertDoesNotThrow方法，在没有异常抛出的情况下会返回一个值
-        int re = assertDoesNotThrow(() -> AssertThrowExceptionDemo.division(9, 1));
+        int actual = assertDoesNotThrow(() -> 9);
 
         //可以对返回的结果值进行一些测试等
-        assertEquals(re, 9);
+        assertEquals(9, actual);
     }
 
     /**
@@ -166,7 +177,7 @@ public class Junit5Assertions {
     @DisplayName("Assert Time Out!")
     void assertTimeoutTag() {
         assertTimeout(ofMillis(90), () -> {
-            Thread.sleep(100);
+            await().atLeast(100, TimeUnit.MILLISECONDS);
         });
     }
 
@@ -179,8 +190,12 @@ public class Junit5Assertions {
     @DisplayName("Assert Timeout Preemptively!")
     void assertTimeoutPreemptivelyTag() {
         assertTimeoutPreemptively(ofMillis(30), () -> {
-            Thread.sleep(50);
+            await().atLeast(50, TimeUnit.MILLISECONDS);
         });
+    }
+
+    private int getCode() {
+        return 5;
     }
 
 }
