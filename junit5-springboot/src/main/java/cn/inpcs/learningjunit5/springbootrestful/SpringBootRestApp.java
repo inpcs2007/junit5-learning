@@ -14,49 +14,27 @@
  * limitations under the License.
  *
  */
-package cn.inpcs.learningjunit5.springboot;
+package cn.inpcs.learningjunit5.springbootrestful;
 
-import javax.annotation.PostConstruct;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * The type My spring boot application.
+ * The type Spring boot rest app.
  *
  * @author inpcs
  * @version 1.0
- * @date 2020 -04-10 14:53:25
+ * @date 2020 -04-10 16:27:12
  */
 @SpringBootApplication
-public class MsgSpringBootApplication {
-
-    /**
-     * The Log.
-     */
-    final Logger log = LoggerFactory.getLogger(MsgSpringBootApplication.class);
-
-    /**
-     * The Message component.
-     */
-    @Autowired
-    public MessageComponent messageComponent;
-
-    @PostConstruct
-    private void setup() {
-        log.info("*** {} ***", messageComponent.getMessage());
-    }
+public class SpringBootRestApp {
 
     /**
      * The entry point of application.
      *
      * @param args the input arguments
-     * @throws Exception the exception
      */
     public static void main(String[] args) {
-        new SpringApplication(MsgSpringBootApplication.class).run(args);
+        SpringApplication.run(SpringBootRestApp.class, args);
     }
 }
