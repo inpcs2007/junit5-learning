@@ -11,7 +11,7 @@ junit5-learning
 
 ## 开始学习
 
-- [base](#basemark)
+- [基本教程](#basemark)
 
 # 快速开始
 
@@ -21,9 +21,10 @@ jdk 8+, mavne 3.6.1
 
 ## 快速开始
 
-# basemark
-- [helloworld](https://github.com/inpcs2007/junit5-learning/doc/base/helloworld.md)
-- [annotation](https://github.com/inpcs2007/junit5-learning/doc/base/annotation.md)
-- [assertions](https://github.com/inpcs2007/junit5-learning/doc/base/assertions.md)
+# Basemark
+
+- [helloworld](https://github.com/inpcs2007/junit5-learning/blob/master/doc/base/helloworld.md)
+- [annotation](https://github.com/inpcs2007/junit5-learning/blob/master/doc/base/annotation.md)
+- [assertions](https://github.com/inpcs2007/junit5-learning/blob/master/doc/base/assertions.md)
 
 
