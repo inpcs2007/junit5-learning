@@ -2,10 +2,7 @@ junit5-learning
 =====================================
 [![License](http://img.shields.io/:license-apache-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-[![junit5-learning](https://github.com/inpcs2007/junit5-learning/doc/logo.jpg)](https://github.com/inpcs2007/junit5-learning/doc/logo.jpg)
-
-[pinyin](https://github.com/houbb/pinyin) 是 java 实现的高性能中文拼音转换工具。
-
+![junit5-learning](https://github.com/inpcs2007/junit5-learning/blob/master/doc/logo.png)
 
 ## 创作目的
 
