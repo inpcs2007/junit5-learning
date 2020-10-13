@@ -12,7 +12,7 @@
     <artifactId>junit4-cucumber5</artifactId>
     <version>1.0</version>
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
         <cucumber.version>5.6.0</cucumber.version>
 
